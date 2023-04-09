@@ -1,0 +1,21 @@
+version: '3.9'
+services:
+  mongodb:
+    image: mongo:latest
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: sample-db-user
+#      M: sample-db-user
+      MONGO_INITDB_ROOT_PASSWORD: sample-password
+    ports:
+      - "27017:27017"
+
+  postgresql:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: user-repository
+    ports:
+      - "5433:5432"
