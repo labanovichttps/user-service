@@ -5,6 +5,6 @@ import org.springframework.http.HttpStatus;
 import java.time.Instant;
 
 public record ErrorResponse(Instant time,
-                            HttpStatus httpStatus,
+                            int httpStatus,
                             String errorMessage) {
 }

@@ -20,8 +20,6 @@ public class RestExceptionHandler {
     }
 
     private ResponseEntity<ErrorResponse> buildErrorResponse(EntityNotFoundException e, HttpStatus status) {
-        return new ResponseEntity<>(new ErrorResponse(Instant.now(), status, e.getMessage()), status);
+        return new ResponseEntity<>(new ErrorResponse(Instant.now(), status.value(), e.getMessage()), status);
     }
-
-
 }

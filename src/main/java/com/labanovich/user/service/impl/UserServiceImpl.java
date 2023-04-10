@@ -2,8 +2,6 @@ package com.labanovich.user.service.impl;
 
 import com.labanovich.user.dto.UserCreateDto;
 import com.labanovich.user.dto.UserDto;
-import com.labanovich.user.entity.User;
-import com.labanovich.user.exception.EntityNotFoundException;
 import com.labanovich.user.mapper.UserMapper;
 import com.labanovich.user.repository.UserRepository;
 import com.labanovich.user.service.UserService;
@@ -23,8 +21,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public Mono<UserDto> findById(Long id) {
         return userRepository.findById(id)
-            .map(userMapper::toUserDto)
-            .switchIfEmpty(Mono.error(() -> new EntityNotFoundException("id", User.class, id)));
+            .map(userMapper::toUserDto);
     }
 
     @Override

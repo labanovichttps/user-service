@@ -1,5 +1,8 @@
 package com.labanovich.user.exception;
 
+import lombok.Getter;
+
+@Getter
 public class EntityNotFoundException extends RuntimeException {
 
     private final Class<?> clazz;

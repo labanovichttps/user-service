@@ -3,7 +3,6 @@ spring:
     password: pass
     username: postgres
     url: r2dbc:postgresql://localhost:5433/user-repository
-    name: user-repository
   jpa:
     open-in-view: false
 server:
